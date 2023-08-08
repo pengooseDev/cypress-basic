@@ -1,8 +1,4 @@
-const SELECTOR = Object.freeze({
-  PLUS_BUTTON: '.plus-button',
-  MINUS_BUTTON: '.minus-button',
-  COUNTER: '.count-display',
-});
+import { SELECTOR } from '../../src/js/modules/Counter';
 
 describe('ui-counter', () => {
   beforeEach(() => {
