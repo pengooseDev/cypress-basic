@@ -11,4 +11,9 @@ describe('ui-counter', () => {
     cy.get('plus-button').click();
     cy.get('.count-display').should('have.value', '11');
   });
+
+  it('- 버튼을 클릭 시 count가 1감소한다', () => {
+    cy.get('minus-button').click();
+    cy.get('.count-display').should('have.value', '9');
+  });
 });
