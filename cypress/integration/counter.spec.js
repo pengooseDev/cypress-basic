@@ -25,4 +25,13 @@ describe('ui-counter', () => {
 
     cy.get('.count-display').should('have.value', 12);
   });
+
+  it('count의 값은 8 아래로 떨어질 수 없다', () => {
+    const TOTAL_CLICK = 5;
+    for (let clickCount = 0; clickCount < TOTAL_CLICK; clickCount++) {
+      cy.get('minus-button').click();
+    }
+
+    cy.get('.count-display').should('have.value', 8);
+  });
 });
