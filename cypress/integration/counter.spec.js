@@ -16,4 +16,13 @@ describe('ui-counter', () => {
     cy.get('minus-button').click();
     cy.get('.count-display').should('have.value', '9');
   });
+
+  it('count의 값은 12를 넘어갈 수 없다', () => {
+    const TOTAL_CLICK = 5;
+    for (let clickCount = 0; clickCount < TOTAL_CLICK; clickCount++) {
+      cy.get('plus-button').click();
+    }
+
+    cy.get('.count-display').should('have.value', 12);
+  });
 });
