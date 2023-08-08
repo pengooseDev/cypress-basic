@@ -1,8 +1,13 @@
-export const SELECTOR = {
+export const SELECTOR = Object.freeze({
   PLUS_BUTTON: '.plus-button',
   MINUS_BUTTON: '.minus-button',
   COUNTER: '.count-display',
-};
+});
+
+const COUNTER = Object.freeze({
+  MAX_VALUE: 12,
+  MIN_VALUE: 8,
+});
 
 export default function Counter({ $app }) {
   let $plusButton;
@@ -13,7 +18,7 @@ export default function Counter({ $app }) {
     let currentValue = Number($countDisplay.value);
     const countResult = currentValue + value;
 
-    if (countResult <= 12 && countResult >= 8) {
+    if (countResult <= COUNTER.MAX_VALUE && countResult >= COUNTER.MIN_VALUE) {
       $countDisplay.value = countResult;
     }
   };
